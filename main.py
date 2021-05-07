@@ -69,6 +69,8 @@ def recebeArquivo(res):
 
 if __name__ == '__main__':
     resposta = input('Dígite o nome do arquivo: ')
-    
-    with open(resposta, 'r') as arq:
-        recebeArquivo(arq)
+    try:
+        with open(resposta, 'r') as arq:
+            recebeArquivo(arq)
+    except FileNotFoundError:
+        print('\nEsse arquivo não foi encontrado!')
